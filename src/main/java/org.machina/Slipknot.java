@@ -1,3 +1,5 @@
+package org.machina;
+
 import java.util.Collection;
 
 import org.canova.api.util.ClassPathResource;
@@ -8,18 +10,17 @@ import org.deeplearning4j.text.sentenceiterator.SentenceIterator;
 import org.deeplearning4j.text.tokenization.tokenizer.preprocessor.CommonPreprocessor;
 import org.deeplearning4j.text.tokenization.tokenizerfactory.DefaultTokenizerFactory;
 import org.deeplearning4j.text.tokenization.tokenizerfactory.TokenizerFactory;
-import org.deeplearning4j.ui.UiServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * Created by wscholar on 1/21/16.
  */
-public class slipknot {
+public class Slipknot {
 
-	private static Logger log = LoggerFactory.getLogger(slipknot.class);
+	private static Logger log = LoggerFactory.getLogger(Slipknot.class);
 
-	public static void main(String[] args) throws Exception {
+	public void postConstruct() throws Exception {
 
 		String filePath = new ClassPathResource("raw_sentences.txt").getFile().getAbsolutePath();
 
@@ -52,7 +53,7 @@ public class slipknot {
 		log.info("Closest Words:");
 		Collection<String> lst = vec.wordsNearest("day", 10);
 		System.out.println(lst);
-		UiServer server = UiServer.getInstance();
-		System.out.println("Started on port " + server.getPort());
+//		UiServer server = UiServer.getInstance();
+//		System.out.println("Started on port " + server.getPort());
 	}
 }
